@@ -26,23 +26,40 @@
       <form action="{{ route('register') }}" method="post">
         @csrf
         <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="Full name">
+          <input type="text" class="form-control" placeholder="Full name" name="name">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-user"></span>
             </div>
           </div>
         </div>
+        @error('name')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
         <div class="input-group mb-3">
-          <input type="email" class="form-control" placeholder="Email">
+          <input name="email" type="email" class="form-control" placeholder="Email">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
             </div>
           </div>
         </div>
+        @error('email')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
         <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Password">
+          <input name="password" type="password" class="form-control" placeholder="Password">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
+            </div>
+          </div>
+        </div>
+        @error('password')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+        <div class="input-group mb-3">
+          <input type="password" class="form-control" placeholder="Retype password" name="password_confirmation">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
@@ -50,13 +67,23 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Retype password">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-lock"></span>
-            </div>
-          </div>
+            <input type="number" class="form-control" name="umur" placeholder="Umur">
         </div>
+        @error('umur')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+        <div class="input-group mb-3">
+            <textarea class="form-control" name="alamat" id="alamat" placeholder="Alamat"></textarea>
+        </div>
+        @error('alamat')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+        <div class="input-group mb-3">
+            <textarea class="form-control" name="bio" id="biodata" placeholder="Biodata"></textarea>
+        </div>
+        @error('bio')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
         
           
           <!-- /.col -->
