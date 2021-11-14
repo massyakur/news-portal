@@ -3,10 +3,10 @@
 
 <h3>Anggota Kelompok</h3>
 <ul>
-  <li>Muhammad Syakura</li>
+  <li>Muhammad Abdan Syakura</li>
   <li>Naila Fadya</li>
   <li>Ricky Romansyah</li>
-</ul> 
+</ul>
 
 <h2>Thema Project</h2>
 <p>PORTAL Berita</p>
@@ -17,8 +17,3 @@
 <h2>Link Video</h2>
 <p>Link Demo Aplikasi: </p>
 <p>Link Deploy : </p>
-
-
-
-
-
