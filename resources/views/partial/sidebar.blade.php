@@ -8,17 +8,18 @@
     <!-- Sidebar -->
     <div class="sidebar">
       <!-- Sidebar user (optional) -->
+      @auth
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
           <img src="{{asset('admin/dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <a href="#" class="d-block">{{ Auth::user()->name }}</a>
         </div>
       </div>
-
+      @endauth
       <!-- SidebarSearch Form -->
-      <div class="form-inline">
+      <div class="form-inline mt-2">
         <div class="input-group" data-widget="sidebar-search">
           <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
           <div class="input-group-append">
@@ -36,7 +37,7 @@
                with font-awesome or any other icon font library -->
           <li class="nav-item">
             <a href="/" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class="nav-icon fas fa-home"></i>
               <p>
                 Home
               </p>
@@ -67,6 +68,14 @@
           </li> --}}
           <li class="nav-item">
             <a href="/" class="nav-link">
+              <i class="nav-icon fas fa-newspaper"></i>
+              <p>
+                News
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Category
@@ -75,13 +84,38 @@
           </li>
           <li class="nav-item">
             <a href="/" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class="nav-icon fa fa-pen-square"></i>
               <p>
                 Post
               </p>
             </a>
           </li>
-        </ul>
+          @guest
+            <li class="nav-item bg-success">
+              <a href="{{ route('login') }}" class="nav-link">
+                <i class="nav-icon fas fa-sign-in-alt"></i>
+                
+                  Login / Register
+                
+              </a>
+            </li>
+          @endguest
+          @auth
+          <li class="nav-item bg-danger">
+              <a class="nav-link" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                       <i class="fas fa-sign-out-alt nav-icon"></i>
+                                      Logout
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+            </a>
+          </li>     
+          @endauth                     
+          </ul>
 
         
       </nav>
