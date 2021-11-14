@@ -12,7 +12,7 @@
 <p>PORTAL Berita</p>
 
 <h2>ERD</h2>
-<img src="" alt="">
+<img src="ERD.jpeg" alt="">
 
 <h2>Link Video</h2>
 <p>Link Demo Aplikasi: </p>
