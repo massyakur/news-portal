@@ -8,6 +8,13 @@
     <!-- Sidebar -->
     <div class="sidebar">
       <!-- Sidebar user (optional) -->
+      @guest
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="info">
+          <a href="/login" class="d-block">Login for more features!</a>
+        </div>
+      </div>
+      @endguest
       @auth
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
@@ -43,29 +50,6 @@
               </p>
             </a>
           </li>
-          {{-- <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-table"></i>
-              <p>
-                Post
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="table" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Table</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="data-tables" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>DataTable</p>
-                </a>
-              </li>
-            </ul>
-          </li> --}}
           <li class="nav-item">
             <a href="/" class="nav-link">
               <i class="nav-icon fas fa-newspaper"></i>
@@ -74,14 +58,43 @@
               </p>
             </a>
           </li>
-          <li class="nav-item">
-            <a href="/" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+          @guest
+             <li class="nav-item">
+            <a href="/kategori" class="nav-link">
+              <i class="nav-icon fas fa-list"></i>
               <p>
                 Category
               </p>
             </a>
+          </li> 
+          @endguest
+          @auth
+          <li class="nav-item">
+            <a href="/kategori" class="nav-link">
+              <i class="nav-icon fas fa-list"></i>
+              <p>
+                Category
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/kategori/create" class="nav-link">
+                  {{-- <i class="far fa-circle nav-icon"></i> --}}
+                  <i class="fas fa-plus-square nav-icon"></i>
+                  <p>Add New Category</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/kategori/" class="nav-link">
+                  <i class="fas fa-table nav-icon"></i>
+                  <p>List Category</p>
+                </a>
+              </li>
+            </ul>
           </li>
+          @endauth
+          
           <li class="nav-item">
             <a href="/" class="nav-link">
               <i class="nav-icon fa fa-pen-square"></i>
