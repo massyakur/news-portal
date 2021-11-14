@@ -42,11 +42,11 @@
               </p>
             </a>
           </li>
-          <li class="nav-item">
+          {{-- <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>
-                Tables
+                Post
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
@@ -64,6 +64,22 @@
                 </a>
               </li>
             </ul>
+          </li> --}}
+          <li class="nav-item">
+            <a href="/" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                Category
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                Post
+              </p>
+            </a>
           </li>
         </ul>
 
