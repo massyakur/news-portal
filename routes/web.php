@@ -25,6 +25,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //CRUD Kategori
 Route::resource('kategori', 'KategoriController');
-
+//CRUD Profile
+Route::resource('profile', 'ProfileController');
 //CRUD Berita
 Route::resource('berita', 'BeritaController');
